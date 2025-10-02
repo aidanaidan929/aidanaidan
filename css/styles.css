@@ -5,8 +5,15 @@ main {
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(15px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 body {
@@ -27,8 +34,9 @@ main {
     align-items: center;
 }
 
-a:visited, a:link, a:active
-{
+a:visited,
+a:link,
+a:active {
     text-decoration: none;
     color: black;
 }
@@ -37,7 +45,13 @@ a:hover {
     color: green;
 }
 
-h1, h2, h3, h4, h5, h6, p {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
     font-family: "franklin-gothic-atf", sans-serif;
 }
 
@@ -76,22 +90,23 @@ p.description {
 }
 
 .row {
-  display: flex;
-  flex-flow: row;
-  justify-content: space-evenly;
-  margin-bottom: 20px;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-evenly;
+    margin-bottom: 20px;
 }
 
-.row img, .row video {
-  width: auto;
-  max-height: 375px;
-  padding: 10px;
+.row img,
+.row video {
+    width: auto;
+    max-height: 375px;
+    padding: 10px;
 }
 
 .wrap {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
 }
 
 /* Centered Text */
@@ -116,6 +131,11 @@ p.description {
     font-weight: 800;
     font-style: normal;
     font-size: 35px;
+}
+
+.link-grid a {
+    text-transform: none;
+    font-variant: normal;
 }
 
 .link-grid a:nth-child(1):hover {
@@ -149,38 +169,38 @@ p.description {
 /* Styles for Pictures */
 
 .examples {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  margin-top: 0;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-top: 0;
 }
 
 /* Lightbox */
 
-.row img:hover{
+.row img:hover {
     cursor: pointer;
 }
 
 .lightbox {
-  display: none; 
-  position: fixed; 
-  z-index: 1000;
-  top: 0; 
-  left: 0;
-  width: 100%; 
-  height: 100%;
-  background-color: rgba(0,0,0,0.9);
-  justify-content: center;
-  align-items: center;
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
 }
 
 .lightbox-content {
-  max-width: 90%;
-  max-height: 80%;
-  box-shadow: 0 0 20px black;
+    max-width: 90%;
+    max-height: 80%;
+    box-shadow: 0 0 20px black;
 }
 
 .close {
@@ -191,6 +211,274 @@ p.description {
     font-size: 30px;
     cursor: pointer;
 }
+
+
+/* ======== RESPONSIVE STYLES ======== */
+
+
+
+/* ========= LANDING PAGE RESPONSIVE ========= */
+
+/* Tablets and below */
+@media (max-width: 992px) {
+    .center-text {
+        font-size: 80px;
+
+    }
+
+    .link-grid {
+        gap: 40px;
+        font-size: 28px;
+        flex-wrap: wrap;
+
+    }
+}
+
+/* Mobile landscape */
+@media (max-width: 768px) {
+    .center-text {
+        font-size: 60px;
+    }
+
+    .link-grid {
+        gap: 25px;
+        font-size: 24px;
+        flex-wrap: wrap;
+    }
+}
+
+/* Mobile portrait */
+@media (max-width: 480px) {
+    .center-text {
+        font-size: 40px;
+        margin-bottom: 20px;
+    }
+
+    .link-grid {
+        flex-direction: column;
+        gap: 15px;
+        font-size: 20px;
+    }
+}
+
+
+/* ========= DESIGN PAGE RESPONSIVE ========= */
+
+/* Tablets and below */
+@media (max-width: 992px) {
+  .row {
+    flex-wrap: wrap;             
+    justify-content: center;     
+  }
+
+  .row img {
+    max-width: 45%;              
+    height: auto;
+  }
+}
+
+/* Mobile landscape */
+@media (max-width: 768px) {
+  .row img {
+    max-height: 220px;
+    max-width: 80%;              
+  }
+
+  .back {
+    font-size: 12px;             
+  }
+
+  .page-header-title h1 {
+    font-size: 32px;             
+  }
+
+  .page-header-title p {
+    font-size: 14px;
+  }
+}
+
+/* Mobile portrait */
+@media (max-width: 480px) {
+  .row {
+    flex-direction: column;      
+    align-items: center;
+  }
+
+  .row img {
+    max-height: none;
+    max-width: 90%;
+    margin-bottom: 15px;
+  }
+
+  .back {
+    font-size: 14px;
+  }
+
+  .page-header-title h1 {
+    font-size: 28px;
+  }
+
+  .page-header-title p {
+    font-size: 13px;
+  }
+
+  p.description {
+    font-size: 12px;
+  }
+}
+
+
+/* ========= FILM PAGE RESPONSIVE ========= */
+
+/* Tablets and below */
+@media (max-width: 992px) {
+  .examples .row {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .examples .row img {
+    max-height: 300px;   
+    max-width: 45%;      
+    height: auto;
+    margin-bottom: 15px;
+  }
+}
+
+/* Mobile landscape */
+@media (max-width: 768px) {
+  .examples .row img {
+    max-height: 220px;
+    max-width: 80%;      
+  }
+
+  .page-header-title h1 {
+    font-size: 32px;
+  }
+
+  .page-header-title p {
+    font-size: 14px;
+  }
+
+  .back {
+    font-size: 12px;
+  }
+}
+
+/* Mobile portrait */
+@media (max-width: 480px) {
+  .examples .row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .examples .row img {
+    max-height: none;
+    max-width: 90%;      
+    margin-bottom: 15px;
+  }
+
+  .page-header-title h1 {
+    font-size: 28px;
+  }
+
+  .page-header-title p {
+    font-size: 13px;
+  }
+
+  p.description {
+    font-size: 12px;
+  }
+
+  .back {
+    font-size: 14px;
+  }
+}
+
+
+/* ========= VIDEO PAGE RESPONSIVE ========= */
+
+/* Tablets and below */
+@media (max-width: 992px) {
+  .row video {
+    max-width: 80%;      
+    max-height: 300px;
+  }
+}
+
+/* Mobile landscape */
+@media (max-width: 768px) {
+  .row video {
+    max-width: 90%;      
+    max-height: 240px;
+  }
+
+  .page-header-title h1 {
+    font-size: 32px;
+  }
+
+  .page-header-title p {
+    font-size: 14px;
+  }
+
+  .back {
+    font-size: 12px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  p.description {
+    font-size: 13px;
+  }
+}
+
+/* Mobile portrait */
+@media (max-width: 480px) {
+  .row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .row video {
+    max-width: 100%;   
+    height: auto;        
+    max-height: none;
+  }
+
+  .page-header-title h1 {
+    font-size: 28px;
+  }
+
+  .page-header-title p {
+    font-size: 13px;
+  }
+
+  .back {
+    font-size: 14px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  p.description {
+    font-size: 12px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Fonts
 
