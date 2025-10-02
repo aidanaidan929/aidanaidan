@@ -1,0 +1,41 @@
+<!-- Lots of help from JavaScript Academy's video here: https://www.youtube.com/watch?v=mRDo-QXVUv8 -->
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- resets browser defaults -->
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <!-- custom styles -->
+    <link rel="stylesheet" href="https://use.typekit.net/vsw0tbu.css">
+    <link rel="stylesheet" href="css/draw.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Draw</title>
+</head>
+
+<body>
+    <main>
+        <div class="page-draw">
+            <p class="back"><a href="index.html">
+                    < Back</a>
+            </p>
+            <h1>Draw</h1>
+        </div>
+        <div class="canvas-container">
+            <div id="toolbar">
+                <label for="stroke">Color</label>
+                <input id="stroke" name="color" type="color">
+                <label for="lineWidth">Size</label>
+                <input id="lineWidth" name="lineWidth" type="range" min="1" max="50" value="5">
+                <button id="clear">Clear</button>
+            </div>
+            <div class="drawing-board">
+                <canvas id="drawing-board"></canvas>
+            </div>
+        </div>
+    </main>
+    <script src="js/draw.js"></script>
+</body>
+
+</html>

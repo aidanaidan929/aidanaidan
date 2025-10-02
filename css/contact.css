@@ -1,0 +1,19 @@
+/* Styling for picture at bottom */
+
+.rotating-pic {
+  width: 150px;
+  height: 150px;
+  background-size: cover;
+  background-position: center;
+  animation: rotatePics 10s steps(1, end) infinite;
+}
+
+@keyframes rotatePics {
+  0%   { background-image: url("../images/aidan_kid.jpg"); }
+  16%  { background-image: url("../images/aidan_kid2.jpg"); }
+  33%  { background-image: url("../images/aidan_kid3.jpg"); }
+  50%  { background-image: url("../images/aidan_kid4.jpg"); }
+  66%  { background-image: url("../images/aidan_kid5.jpg"); }
+  83%  { background-image: url("../images/aidan_kid6.jpg"); }
+  100% { background-image: url("../images/aidan_kid1.jpg"); }
+}

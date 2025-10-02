@@ -1,0 +1,233 @@
+/* General Styles */
+
+main {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+body {
+    margin: 0;
+}
+
+main {
+    width: 100vw;
+    height: 100vh;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+a:visited, a:link, a:active
+{
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    color: green;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    font-family: "franklin-gothic-atf", sans-serif;
+}
+
+h1 {
+    margin: 0 0 10px 0;
+}
+
+p {
+    font-weight: 400;
+    font-style: normal;
+}
+
+p.description {
+    font-weight: 300;
+    font-size: 14px;
+}
+
+.back {
+    font-size: 10px;
+    font-family: "franklin-gothic-atf", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    margin-bottom: 20px;
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    margin-bottom: 20px;
+}
+
+.page-header-title {
+    font-family: "franklin-gothic-atf", sans-serif;
+    margin: 0 0 10px 0;
+}
+
+.row {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-evenly;
+  margin-bottom: 20px;
+}
+
+.row img, .row video {
+  width: auto;
+  max-height: 375px;
+  padding: 10px;
+}
+
+.wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* Centered Text */
+
+.center-text {
+    font-family: "franklin-gothic-atf", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 120px;
+    margin: 0 0 30px 0;
+    text-align: center;
+}
+
+
+/* Link Grid */
+
+.link-grid {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    font-family: "franklin-gothic-atf", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 35px;
+}
+
+.link-grid a:nth-child(1):hover {
+    color: rgb(236, 22, 22);
+}
+
+.link-grid a:nth-child(2):hover {
+    color: rgb(29, 29, 217);
+}
+
+.link-grid a:nth-child(3):hover {
+    color: rgb(19, 187, 19);
+}
+
+.link-grid a:nth-child(4):hover {
+    color: rgb(243, 175, 17);
+}
+
+.link-grid a:nth-child(5):hover {
+    color: rgb(255, 0, 136);
+}
+
+.link-grid a:nth-child(6):hover {
+    color: rgb(10, 214, 211);
+}
+
+.link-grid a {
+    transition: color 0.3s ease;
+}
+
+/* Styles for Pictures */
+
+.examples {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin-top: 0;
+}
+
+/* Lightbox */
+
+.row img:hover{
+    cursor: pointer;
+}
+
+.lightbox {
+  display: none; 
+  position: fixed; 
+  z-index: 1000;
+  top: 0; 
+  left: 0;
+  width: 100%; 
+  height: 100%;
+  background-color: rgba(0,0,0,0.9);
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox-content {
+  max-width: 90%;
+  max-height: 80%;
+  box-shadow: 0 0 20px black;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* Fonts
+
+Franklin Gothic ATF Regular
+font-family: "franklin-gothic-atf", sans-serif;
+font-weight: 400;
+font-style: normal;
+
+Franklin Gothic ATF Italic
+font-family: "franklin-gothic-atf", sans-serif;
+font-weight: 400;
+font-style: italic;
+
+Franklin Gothic ATF Black
+font-family: "franklin-gothic-atf", sans-serif;
+font-weight: 700;
+font-style: normal;
+
+Franklin Gothic ATF Black Italic
+font-family: "franklin-gothic-atf", sans-serif;
+font-weight: 700;
+font-style: italic;
+
+Franklin Gothic ATF Thin
+font-family: "franklin-gothic-atf", sans-serif;
+font-weight: 100;
+font-style: normal;
+
+Franklin Gothic Heavy
+font-family: "franklin-gothic-atf", sans-serif;
+font-weight: 800;
+font-style: normal;
+
+Franklin Gothic Thin
+font-family: "franklin-gothic-atf", sans-serif;
+font-weight: 300;
+font-style: normal;
+
+
+*/

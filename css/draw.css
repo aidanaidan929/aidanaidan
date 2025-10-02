@@ -1,0 +1,53 @@
+/* General styles drawing application */
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+.page-draw {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+}
+
+
+/* ToolBar */
+#toolbar {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    padding: 15px 0 15px 30px;
+    gap: 15px;
+    background-color: black;
+    width: auto;
+    font-family: "franklin-gothic-atf", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 12px;
+    color: white;
+}
+
+#clear {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 12px;
+    padding: 8px;
+    border-radius: 20px;
+}
+
+#toolbar button:hover {
+    background-color: rgb(236, 22, 22);
+    color: white;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+/* Canvas */
+
+#drawing-board {
+    position: relative;
+   /*  cursor: url(../images/brush.png), auto; */
+}
