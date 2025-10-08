@@ -4,10 +4,10 @@ const canvas = document.getElementById('drawing-board');
 const toolbar = document.getElementById('toolbar');
 const ctx = canvas.getContext('2d');
 
-// Set up canvas size dynamically
+
 function resizeCanvas() {
   canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight - toolbar.offsetHeight - 40; // leave room for toolbar
+  canvas.height = window.innerHeight - toolbar.offsetHeight - 40;
 }
 resizeCanvas();
 window.addEventListener('resize', resizeCanvas);
@@ -15,7 +15,7 @@ window.addEventListener('resize', resizeCanvas);
 let isDrawing = false;
 let lineWidth = 5;
 
-// Toolbar actions
+
 toolbar.addEventListener('click', (e) => {
   if (e.target.id === 'clear') {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -32,7 +32,6 @@ toolbar.addEventListener('change', (e) => {
   }
 });
 
-// ===== Drawing Logic (supports both mouse + touch) =====
 function getPosition(e) {
   if (e.touches && e.touches.length > 0) {
     const rect = canvas.getBoundingClientRect();
