@@ -265,6 +265,10 @@ p.description {
     font-size: 28px;
     flex-wrap: wrap;
   }
+
+  .back {
+    font-size: 12px;
+  }
 }
 
 /* ——— Mobile landscape ——— */
@@ -307,6 +311,10 @@ p.description {
     gap: 25px;
     font-size: 24px;
     flex-wrap: wrap;
+  }
+
+  .back {
+    font-size: 14px;
   }
 }
 
@@ -363,6 +371,10 @@ p.description {
     flex-direction: column;
     gap: 15px;
     font-size: 20px;
+  }
+
+  .back {
+    font-size: 14px;
   }
 }
 
