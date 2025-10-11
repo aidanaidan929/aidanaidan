@@ -330,6 +330,17 @@ p.description {
     object-fit: contain;
   }
 
+  .examples .row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .examples .row img {
+    max-height: none;
+    max-width: 90%;
+    margin-bottom: 15px;
+  }
+
   video {
     width: 100%;
     max-width: 100%;
