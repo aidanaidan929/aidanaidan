@@ -1,3 +1,101 @@
+/* Link Grid */
+
+.link-grid {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  font-family: "franklin-gothic-atf", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+  font-size: 35px;
+  z-index: 1;
+  margin-top: 20px;
+}
+
+.link-grid a {
+  text-transform: none;
+  font-variant: normal;
+  transition: color 0.3 ease, transform 0.3s ease;
+}
+
+.link-grid a:hover {
+    transform: translateY(-3px);
+} 
+
+.link-grid a:nth-child(1):hover {
+  color: rgb(236, 22, 22);
+}
+
+.link-grid a:nth-child(2):hover {
+  color: rgb(29, 29, 217);
+}
+
+.link-grid a:nth-child(3):hover {
+  color: rgb(19, 187, 19);
+}
+
+.link-grid a:nth-child(4):hover {
+  color: rgb(243, 175, 17);
+}
+
+.link-grid a:nth-child(5):hover {
+  color: rgb(255, 0, 136);
+}
+
+.link-grid a:nth-child(6):hover {
+  color: rgb(10, 214, 211);
+}
+
+
+
+/* Animations */
+
+
+/* Design Rectangle Animation */
+
+#design-rect {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.2);
+  width: 90%;
+  max-width: 850px;
+  height: 300px;
+  display: block;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 2;
+  transition: opacity 0.3s ease;
+}
+
+#design-rect .rect-stroke {
+  fill: none;
+  stroke: #4f7fff;
+  stroke-width: 3px;
+  stroke-miterlimit: 10;
+  stroke-dasharray: 2000;
+  stroke-dashoffset: 2000;
+}
+
+#design-rect .corner-square {
+  fill: #fff;
+  stroke: #4f7fff;
+  stroke-width: 0.5px;
+  stroke-miterlimit: 10;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Fade in when active */
+#design-rect.visible {
+  opacity: 1;
+}
+
+#design-rect.visible .corner-square {
+  opacity: 1;
+}
+
+
 /* Video Effect (Help from Claude)  */
 
 .video-text-wrapper {
@@ -13,6 +111,7 @@
     margin: 0;
     position: relative;
     z-index: 2;
+    /* letter-spacing: 0.02em; */
 }
 
 .video-mask-svg {

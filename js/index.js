@@ -1,5 +1,31 @@
 //index.js
 
+// SVG Animation for Design
+document.addEventListener("DOMContentLoaded", () => {
+  const designLink = document.getElementById("design-link");
+  const rect = document.getElementById("design-rect");
+  const path = rect.querySelector(".rect-stroke");
+
+  // Set initial dash properties
+  const length = path.getTotalLength();
+  path.style.strokeDasharray = length;
+  path.style.strokeDashoffset = length;
+
+  // When hover starts
+  designLink.addEventListener("mouseenter", () => {
+    rect.classList.add("visible");
+    path.style.transition = `stroke-dashoffset 1.5s ease`;
+    path.style.strokeDashoffset = "0";
+  });
+
+  // When hover ends
+  designLink.addEventListener("mouseleave", () => {
+    path.style.transition = "none";
+    path.style.strokeDashoffset = length;
+    rect.classList.remove("visible");
+  });
+});
+
 
 // SVG Animation for Draw
 
