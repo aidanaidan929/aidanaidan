@@ -1,5 +1,3 @@
-//index.js
-
 // SVG Animation for Design
 document.addEventListener("DOMContentLoaded", () => {
   const designLink = document.getElementById("design-link");

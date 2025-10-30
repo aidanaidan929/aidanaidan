@@ -3,11 +3,11 @@
 .link-grid {
   display: flex;
   justify-content: center;
-  gap: 60px;
+  gap: 70px;
   font-family: "franklin-gothic-atf", sans-serif;
-  font-weight: 800;
+  font-weight: 500;
   font-style: normal;
-  font-size: 35px;
+  font-size: 33px;
   z-index: 1;
   margin-top: 20px;
 }
@@ -15,12 +15,28 @@
 .link-grid a {
   text-transform: none;
   font-variant: normal;
-  transition: color 0.3 ease, transform 0.3s ease;
+  transition: color 0.3s ease, transform 0.3s ease;
+  position: relative;
+}
+
+.link-grid a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: currentColor;
+    transition: width 0.3s ease;
+}
+
+.link-grid a:hover::after {
+    width: 100%;
 }
 
 .link-grid a:hover {
     transform: translateY(-3px);
-} 
+}
 
 .link-grid a:nth-child(1):hover {
   color: rgb(236, 22, 22);
@@ -111,7 +127,6 @@
     margin: 0;
     position: relative;
     z-index: 2;
-    /* letter-spacing: 0.02em; */
 }
 
 .video-mask-svg {
