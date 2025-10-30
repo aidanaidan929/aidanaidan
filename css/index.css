@@ -1,4 +1,41 @@
-/* ====== SVG Overlay Animation for Draw Link ====== */
+/* Video Effect (Help from Claude)  */
+
+.video-text-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+#name-title {
+    font-family: "franklin-gothic-atf", sans-serif;
+    font-size: 120px;
+    font-weight: 800;
+    color: black;
+    margin: 0;
+    position: relative;
+    z-index: 2;
+}
+
+.video-mask-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 3;
+}
+
+.video-active .video-mask-svg {
+    opacity: 1;
+}
+
+.video-active #name-title {
+    opacity: 0;
+}
+
+
+/* Draw Animation (Help from ChatGPT) */
 
 #graffiti {
   position: absolute;
@@ -11,7 +48,7 @@
   display: block;
   opacity: 0;
   pointer-events: none;
-  z-index: 2; 
+  z-index: 2;
   transition: opacity 0.3s ease;
 }
 
