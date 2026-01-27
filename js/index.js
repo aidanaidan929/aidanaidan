@@ -1,3 +1,5 @@
+// index.js
+
 // SVG Animation for Design
 document.addEventListener("DOMContentLoaded", () => {
   const designLink = document.getElementById("design-link");
@@ -82,4 +84,20 @@ document.addEventListener("DOMContentLoaded", () => {
     video.pause();
     video.currentTime = 0;
   });
+});
+
+// Mailbox Flag Animation for Contact
+document.addEventListener("DOMContentLoaded", () => {
+  const contactLink = document.getElementById("contact-link");
+  const flag = document.getElementById("mailbox-flag");
+
+  if (contactLink && flag) {
+    contactLink.addEventListener("mouseenter", () => {
+      flag.classList.add("visible");
+    });
+
+    contactLink.addEventListener("mouseleave", () => {
+      flag.classList.remove("visible");
+    });
+  }
 });
