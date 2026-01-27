@@ -1,3 +1,5 @@
+/* draw.css */
+
 /* General styles drawing application */
 
 body {
@@ -10,9 +12,10 @@ body {
 .page-draw {
     display: flex;
     flex-direction: column;
-    padding: 30px;
+    padding: 60px 48px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
-
 
 /* ToolBar */
 #toolbar {
@@ -20,6 +23,9 @@ body {
     align-items: center;
     flex-direction: row;
     padding: 15px 0 15px 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-radius: 50px;
     gap: 15px;
     background-color: black;
     width: auto;
@@ -28,14 +34,21 @@ body {
     font-style: normal;
     font-size: 12px;
     color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
 }
 
-#clear {
-    display: flex;
-    justify-content: flex-end;
-    font-size: 12px;
-    padding: 8px;
-    border-radius: 20px;
+#toolbar button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    background-color: transparent;
+    color: white;
+    font-family: "franklin-gothic-atf", sans-serif;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 0.02em;
 }
 
 #toolbar button:hover {
@@ -43,6 +56,17 @@ body {
     color: white;
     cursor: pointer;
     transition: 0.3s ease;
+}
+
+
+#clear {
+    background-color: rgba(236, 22, 22, 0.1);
+    border: 1px solid rgba(236, 22, 22, 0.3);
+}
+
+#clear:hover {
+    background-color: rgb(236, 22, 22);
+    border-color: rgb(236, 22, 22);
 }
 
 /* Canvas */
