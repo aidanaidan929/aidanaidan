@@ -26,6 +26,34 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+// Animation for Film
+
+document.addEventListener("DOMContentLoaded", () => {
+  const filmLink = document.getElementById("film-link");
+  const camera = document.getElementById("film-camera");
+  const flash = document.getElementById("film-flash");
+
+  if (!filmLink || !camera || !flash) return;
+
+  filmLink.addEventListener("mouseenter", () => {
+    // Reset animations
+    camera.classList.remove("visible");
+    flash.classList.remove("visible");
+
+    // Force reflow to restart animation
+    void camera.offsetWidth;
+
+    // Start both (keyframes handle the timing)
+    camera.classList.add("visible");
+    flash.classList.add("visible");
+  });
+
+  filmLink.addEventListener("mouseleave", () => {
+    camera.classList.remove("visible");
+    flash.classList.remove("visible");
+  });
+});
+
 
 // SVG Animation for Draw
 

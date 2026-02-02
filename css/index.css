@@ -105,13 +105,91 @@
     transition: opacity 0.3s ease;
 }
 
-/* Fade in when active */
+
 #design-rect.visible {
     opacity: 1;
 }
 
 #design-rect.visible .corner-square {
     opacity: 1;
+}
+
+/* Film Animation (Help from Claude) */
+
+#film-camera {
+  position: absolute;
+  bottom: -50px;
+  right: 10%;
+  width: 160px;
+  height: auto;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1;
+  transition: none;
+}
+
+#film-camera.visible {
+  animation: cameraAppear 2.0s ease forwards;
+}
+
+@keyframes cameraAppear {
+  0% {
+    opacity: 0;
+    bottom: -40px;
+  }
+  15% {
+    opacity: 1;
+    bottom: 80px;
+  }
+  
+  60% {
+    opacity: 1;
+    bottom: 80px;
+  }
+  
+  100% {
+    opacity: 0;
+    bottom: -40px;
+  }
+}
+
+
+#film-flash {
+  position: absolute;
+  bottom: 80px;
+  right: 0%;
+  width: 200px;
+  height: auto;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 5; /* On top of everything */
+  transform: scale(0.5);
+  transition: none;
+}
+
+#film-flash.visible {
+  animation: flashBurst 1.8s ease forwards;
+}
+
+@keyframes flashBurst {
+  0%, 40% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  /* Flash bursts out */
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  /* Quickly fades */
+  65% {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.5);
+  }
 }
 
 
