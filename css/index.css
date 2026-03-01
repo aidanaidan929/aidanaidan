@@ -142,11 +142,11 @@
     bottom: 80px;
   }
   
-  60% {
+  65% {
     opacity: 1;
     bottom: 80px;
   }
-  
+
   100% {
     opacity: 0;
     bottom: -40px;
