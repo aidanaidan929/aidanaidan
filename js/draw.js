@@ -11,15 +11,13 @@ let savedImage = null;
 // ===== SETUP & RESIZING =====
 
 function resizeCanvas(keepDrawing = false) {
-
   if (keepDrawing) {
     savedImage = ctx.getImageData(0, 0, canvas.width, canvas.height);
   }
 
-
+  // Full viewport size
   canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight - toolbar.offsetHeight - 40;
-
+  canvas.height = window.innerHeight;
 
   if (keepDrawing && savedImage) {
     ctx.putImageData(savedImage, 0, 0);
@@ -62,7 +60,6 @@ function getPosition(e) {
     };
   }
 }
-
 
 function startDrawing(e) {
   e.preventDefault();

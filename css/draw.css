@@ -1,51 +1,109 @@
 /* draw.css */
 
-/* General styles drawing application */
-
-body {
+/* Reset and full screen setup */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
     height: 100%;
     overflow: hidden;
 }
 
-.page-draw {
-    display: flex;
-    flex-direction: column;
-    padding: 60px 48px;
-    max-width: 1200px;
-    margin: 0 auto;
+main {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    background-color: white;
 }
 
-/* ToolBar */
+
+.back {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    font-size: 10px;
+    font-family: "Inter", sans-serif;
+    font-weight: 100;
+    margin: 0;
+}
+
+.back a {
+    text-decoration: none;
+    position: relative;
+    color: black;
+}
+
+.back a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0%;
+    height: 1px;
+    background-color: currentColor;
+    transition: width 0.3s ease;
+}
+
+.back a:hover::after {
+    width: 100%;
+}
+
+.back a:hover {
+    transform: translateY(-3px);
+    color: green;
+}
+
+/* Toolbar */
 #toolbar {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
     display: flex;
     align-items: center;
-    flex-direction: row;
-    padding: 15px 0 15px 30px;
-    max-width: 1200px;
-    margin: 0 auto;
-    border-radius: 50px;
-    gap: 15px;
-    background-color: black;
-    width: auto;
+    gap: 12px;
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0);
+    border-radius: 30px;
     font-family: "franklin-gothic-atf", sans-serif;
     font-weight: 400;
-    font-style: normal;
     font-size: 12px;
     color: white;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
 
+#toolbar label {
+    margin-left: 8px;
+}
+
+#toolbar input[type="color"] {
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    background: none;
+}
+
+#toolbar input[type="range"] {
+    width: 80px;
 }
 
 #toolbar button {
-    padding: 8px 16px;
+    padding: 6px 14px;
     border: none;
-    border-radius: 6px;
-    background-color: transparent;
+    border-radius: 15px;
+    background-color: rgba(80, 8, 8, 0.3);
+    border: 2px solid rgba(236, 22, 22, 0.3);
     color: white;
     font-family: "franklin-gothic-atf", sans-serif;
-    font-size: 13px;
+    font-size: 12px;
     cursor: pointer;
     transition: all 0.3s ease;
     letter-spacing: 0.02em;
@@ -53,25 +111,16 @@ body {
 
 #toolbar button:hover {
     background-color: rgb(236, 22, 22);
-    color: white;
-    cursor: pointer;
-    transition: 0.3s ease;
-}
-
-
-#clear {
-    background-color: rgba(236, 22, 22, 0.1);
-    border: 1px solid rgba(236, 22, 22, 0.3);
-}
-
-#clear:hover {
-    background-color: rgb(236, 22, 22);
     border-color: rgb(236, 22, 22);
 }
 
 /* Canvas */
-
 #drawing-board {
-    position: relative;
-   /*  cursor: url(../images/brush.png), auto; */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: crosshair;
+    /* cursor: url(../images/brush.png), auto; */
 }
