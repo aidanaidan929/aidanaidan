@@ -208,6 +208,7 @@
     margin: 0;
     position: relative;
     z-index: 2;
+    transition: color 0.2s ease;
 }
 
 .video-mask-svg {
@@ -260,8 +261,6 @@
 #graffiti.visible {
     opacity: 1;
 }
-
-
 
 /* Animation for Contact */
 

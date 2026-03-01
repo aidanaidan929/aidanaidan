@@ -1,5 +1,26 @@
 // index.js
 
+// Color Change for Title
+document.addEventListener("DOMContentLoaded", () => {
+  const nameTitle = document.getElementById("name-title");
+
+  function getRandomColor() {
+    const r = Math.floor(Math.random() * 256);
+    const g = Math.floor(Math.random() * 256);
+    const b = Math.floor(Math.random() * 256);
+    return `rgb(${r}, ${g}, ${b})`;
+  }
+
+  nameTitle.addEventListener("mouseenter", () => {
+    nameTitle.style.color = getRandomColor();
+  });
+
+  nameTitle.addEventListener("mouseleave", () => {
+    nameTitle.style.color = "black";
+  });
+});
+
+
 // SVG Animation for Design
 document.addEventListener("DOMContentLoaded", () => {
   const designLink = document.getElementById("design-link");
