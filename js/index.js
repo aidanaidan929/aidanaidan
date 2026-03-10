@@ -135,6 +135,62 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+// Typewriter Font Animation for Print (Help from Claude)
+document.addEventListener("DOMContentLoaded", () => {
+  const printLink = document.getElementById("print-link");
+  const nameTitle = document.getElementById("name-title");
+  const originalText = "AIDAN SMITH";
+  const typewriterText = "Aidan Smith";
+  let typewriterInterval;
+
+  printLink.addEventListener("mouseenter", () => {
+    let index = 0;
+    
+    clearInterval(typewriterInterval);
+    
+    nameTitle.innerHTML = '';
+    
+    for (let i = 0; i < originalText.length; i++) {
+      const span = document.createElement('span');
+      span.textContent = originalText[i];
+      
+      if (originalText[i] === ' ') {
+        span.innerHTML = '&nbsp;';
+      }
+      
+      span.style.fontFamily = '"franklin-gothic-atf", sans-serif';
+      span.style.fontWeight = '800';
+      span.style.display = 'inline-block';
+      span.style.transition = 'font-family 0.1s ease, font-weight 0.1s ease';
+      nameTitle.appendChild(span);
+    }
+    
+    const letters = nameTitle.querySelectorAll('span');
+    
+    typewriterInterval = setInterval(() => {
+      if (index < letters.length) {
+
+        if (typewriterText[index] === ' ') {
+          letters[index].innerHTML = '&nbsp;';
+        } else {
+          letters[index].textContent = typewriterText[index];
+        }
+        
+        letters[index].style.fontFamily = '"Courier New", Courier, monospace';
+        letters[index].style.fontWeight = 'bold';
+        index++;
+      } else {
+        clearInterval(typewriterInterval);
+      }
+    }, 200);
+  });
+
+  printLink.addEventListener("mouseleave", () => {
+    clearInterval(typewriterInterval);
+    nameTitle.innerHTML = originalText;
+  });
+});
+
 // Mailbox Flag Animation for Contact
 document.addEventListener("DOMContentLoaded", () => {
   const contactLink = document.getElementById("contact-link");

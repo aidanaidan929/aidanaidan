@@ -3,66 +3,68 @@
 /* Link Grid */
 
 .link-grid {
-    display: flex;
-    justify-content: center;
-    gap: 70px;
-    font-family: "franklin-gothic-atf", sans-serif;
-    font-weight: 500;
-    font-style: normal;
-    font-size: 33px;
-    z-index: 1;
-    margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 70px;
+  font-family: "franklin-gothic-atf", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 33px;
+  z-index: 1;
+  margin-top: 20px;
+  margin-top: 40px;
+  position: relative;
 }
 
 .link-grid a {
-    text-decoration: none;
-    text-transform: none;
-    font-variant: normal;
-    transition: color 0.3s ease, transform 0.3s ease;
-    position: relative;
+  text-decoration: none;
+  text-transform: none;
+  font-variant: normal;
+  transition: color 0.3s ease, transform 0.3s ease;
+  position: relative;
 }
 
 .link-grid a::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0%;
-    height: 2px;
-    background-color: currentColor;
-    transition: width 0.3s ease;
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: currentColor;
+  transition: width 0.3s ease;
 }
 
 .link-grid a:hover::after {
-    width: 100%;
+  width: 100%;
 }
 
 .link-grid a:hover {
-    transform: translateY(-3px);
+  transform: translateY(-3px);
 }
 
 .link-grid a:nth-child(1):hover {
-    color: rgb(236, 22, 22);
+  color: rgb(236, 22, 22);
 }
 
 .link-grid a:nth-child(2):hover {
-    color: rgb(29, 29, 217);
+  color: rgb(29, 29, 217);
 }
 
 .link-grid a:nth-child(3):hover {
-    color: rgb(19, 187, 19);
+  color: rgb(19, 187, 19);
 }
 
 .link-grid a:nth-child(4):hover {
-    color: rgb(243, 175, 17);
+  color: rgb(243, 175, 17);
 }
 
 .link-grid a:nth-child(5):hover {
-    color: rgb(255, 0, 136);
+  color: rgb(255, 0, 136);
 }
 
 .link-grid a:nth-child(6):hover {
-    color: rgb(10, 214, 211);
+  color: rgb(10, 214, 211);
 }
 
 
@@ -73,45 +75,45 @@
 /* Design Rectangle Animation */
 
 #design-rect {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(1.2);
-    width: 90%;
-    max-width: 850px;
-    height: 300px;
-    display: block;
-    opacity: 0;
-    pointer-events: none;
-    z-index: 2;
-    transition: opacity 0.3s ease;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.2);
+  width: 90%;
+  max-width: 850px;
+  height: 300px;
+  display: block;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 2;
+  transition: opacity 0.3s ease;
 }
 
 #design-rect .rect-stroke {
-    fill: none;
-    stroke: #4f7fff;
-    stroke-width: 3px;
-    stroke-miterlimit: 10;
-    stroke-dasharray: 2000;
-    stroke-dashoffset: 2000;
+  fill: none;
+  stroke: #4f7fff;
+  stroke-width: 3px;
+  stroke-miterlimit: 10;
+  stroke-dasharray: 2000;
+  stroke-dashoffset: 2000;
 }
 
 #design-rect .corner-square {
-    fill: #fff;
-    stroke: #4f7fff;
-    stroke-width: 0.5px;
-    stroke-miterlimit: 10;
-    opacity: 0;
-    transition: opacity 0.3s ease;
+  fill: #fff;
+  stroke: #4f7fff;
+  stroke-width: 0.5px;
+  stroke-miterlimit: 10;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 
 #design-rect.visible {
-    opacity: 1;
+  opacity: 1;
 }
 
 #design-rect.visible .corner-square {
-    opacity: 1;
+  opacity: 1;
 }
 
 /* Film Animation (Help from Claude) */
@@ -137,11 +139,12 @@
     opacity: 0;
     bottom: -40px;
   }
+
   15% {
     opacity: 1;
     bottom: 80px;
   }
-  
+
   65% {
     opacity: 1;
     bottom: 80px;
@@ -162,7 +165,8 @@
   height: auto;
   opacity: 0;
   pointer-events: none;
-  z-index: 5; /* On top of everything */
+  z-index: 5;
+  /* On top of everything */
   transform: scale(0.5);
   transition: none;
 }
@@ -172,20 +176,25 @@
 }
 
 @keyframes flashBurst {
-  0%, 40% {
+
+  0%,
+  40% {
     opacity: 0;
     transform: scale(0.5);
   }
+
   /* Flash bursts out */
   50% {
     opacity: 1;
     transform: scale(1.2);
   }
+
   /* Quickly fades */
   65% {
     opacity: 0;
     transform: scale(1.5);
   }
+
   100% {
     opacity: 0;
     transform: scale(1.5);
@@ -196,70 +205,82 @@
 /* Video Effect (Help from Claude)  */
 
 .video-text-wrapper {
-    position: relative;
-    display: inline-block;
+  position: relative;
+  display: inline-block;
+  min-height: 120px;
 }
 
 #name-title {
-    font-family: "franklin-gothic-atf", sans-serif;
-    font-size: 120px;
-    font-weight: 800;
-    color: black;
-    margin: 0;
-    position: relative;
-    z-index: 2;
-    transition: color 0.2s ease;
+  font-family: "franklin-gothic-atf", sans-serif;
+  font-size: 120px;
+  font-weight: 800;
+  color: black;
+  margin: 0;
+  position: relative;
+  z-index: 2;
+  transition: color 0.2s ease;
+  min-height: 120px;
+  height: 120px;
+  line-height: 120px;
+  display: flex;
+  justify-content: center;
+  min-width: 900px;
+  align-items: center;
+}
+
+#name-title span {
+  transition: all 0.2s ease;
 }
 
 .video-mask-svg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    pointer-events: none;
-    z-index: 3;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 3;
 }
 
 .video-active .video-mask-svg {
-    opacity: 1;
+  opacity: 1;
 }
 
 .video-active #name-title {
-    opacity: 0;
+  opacity: 0;
 }
 
 
 /* Draw Animation (Help from ChatGPT) */
 
 #graffiti {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80%;
-    max-width: 1000px;
-    height: auto;
-    display: block;
-    opacity: 0;
-    pointer-events: none;
-    z-index: 2;
-    transition: opacity 0.3s ease;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 1000px;
+  height: auto;
+  display: block;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 2;
+  transition: opacity 0.3s ease;
 }
 
 #graffiti path {
-    fill: none;
-    stroke: red;
-    stroke-width: 4;
-    stroke-dasharray: 1000;
-    stroke-dashoffset: 1000;
-    transition: stroke-dashoffset 3s ease-out;
+  fill: none;
+  stroke: red;
+  stroke-width: 4;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  transition: stroke-dashoffset 3s ease-out;
 }
 
 /* Fade in when active */
 #graffiti.visible {
-    opacity: 1;
+  opacity: 1;
 }
 
 /* Animation for Contact */
@@ -267,7 +288,7 @@
 #mailbox-flag {
   position: absolute;
   top: -25px;
-  right: -8px;
+  right: 35px;
   width: 25px;
   height: auto;
   opacity: 0;
