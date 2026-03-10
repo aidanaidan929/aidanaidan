@@ -281,61 +281,283 @@ p.description {
 
 /* ======== RESPONSIVE STYLES ======== */
 
-/* ——— Tablets and below ——— */
-@media (max-width: 992px) {
+/* ——— Large Tablets (992px - 1200px) ——— */
+@media (max-width: 1200px) {
   .page {
-    padding: 20px;
+    padding: 48px 32px;
+    max-width: 960px;
   }
-
-  .row {
-    flex-wrap: wrap;
-    justify-content: center;
+  
+  h1 {
+    font-size: 48px;
   }
-
-  .row img,
-  .row video {
-    max-width: 45%;
-    height: auto;
-    object-fit: contain;
-  }
-
-  video {
-    max-width: 100%;
-    height: auto;
-    display: block;
-  }
-
-  .page-header-title h1 {
-    font-size: 32px;
-  }
-
-  .page-header-title p,
-  p.description {
-    font-size: 14px;
-  }
-
-  .back {
-    font-size: 12px;
-  }
-
+  
   h2 {
-    font-size: 22px;
-  }
-
-  .center-text {
-    font-size: 80px;
-  }
-
-  .link-grid {
-    gap: 40px;
     font-size: 28px;
-    flex-wrap: wrap;
-  }
-
-  .back {
-    font-size: 12px;
   }
 }
+
+/* ——— Tablets and below (768px - 992px) ——— */
+@media (max-width: 992px) {
+  .page {
+    padding: 40px 24px;
+  }
+  
+  h1 {
+    font-size: 42px;
+    margin: 16px 0 12px 0;
+  }
+  
+  h2 {
+    font-size: 26px;
+    margin: 32px 0 10px 0;
+  }
+  
+  p.description {
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+  
+  .row {
+    gap: 16px;
+  }
+  
+  .row img {
+    min-width: 240px;
+  }
+  
+  .row video {
+    max-width: 100%;
+  }
+  
+  .close {
+    top: 24px;
+    right: 32px;
+    font-size: 36px;
+  }
+}
+
+/* ——— Mobile landscape (481px - 768px) ——— */
+@media (max-width: 768px) {
+  body {
+    font-size: 15px;
+  }
+  
+  .page {
+    padding: 32px 20px;
+  }
+  
+  h1 {
+    font-size: 36px;
+    margin: 12px 0 10px 0;
+  }
+  
+  h2 {
+    font-size: 24px;
+    margin: 28px 0 8px 0;
+  }
+  
+  p.description {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+  
+  .row {
+    gap: 12px;
+  }
+  
+  .row img {
+    min-width: 200px;
+  }
+  
+  .row img:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  }
+  
+  .close {
+    top: 20px;
+    right: 24px;
+    font-size: 32px;
+  }
+  
+  .lightbox-content {
+    max-width: 95vw;
+    max-height: 85vh;
+  }
+}
+
+/* ——— Mobile portrait (up to 480px) ——— */
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+  
+  .page {
+    padding: 24px 16px;
+    margin-bottom: 16px;
+  }
+  
+  h1 {
+    font-size: 28px;
+    margin: 10px 0 8px 0;
+    letter-spacing: -0.02em;
+  }
+  
+  h2 {
+    font-size: 20px;
+    margin: 24px 0 8px 0;
+  }
+  
+  p {
+    line-height: 1.5;
+  }
+  
+  p.description {
+    font-size: 13px;
+    margin-bottom: 16px;
+  }
+  
+  .back {
+    font-size: 12px;
+    margin-bottom: 16px;
+  }
+  
+  .row {
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  
+  .row img {
+    width: 100%;
+    min-width: unset;
+    max-width: 100%;
+  }
+  
+  .row video {
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .row img:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+  }
+  
+  .close {
+    top: 16px;
+    right: 16px;
+    font-size: 28px;
+  }
+  
+  .lightbox-content {
+    max-width: 98vw;
+    max-height: 80vh;
+  }
+  
+  /* Disable complex animations on mobile for performance */
+  .row img,
+  .row video {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+}
+
+/* ——— Small mobile (up to 360px) ——— */
+@media (max-width: 360px) {
+  .page {
+    padding: 20px 12px;
+  }
+  
+  h1 {
+    font-size: 24px;
+  }
+  
+  h2 {
+    font-size: 18px;
+  }
+  
+  p.description {
+    font-size: 12px;
+  }
+  
+  .back {
+    font-size: 11px;
+  }
+}
+
+/* ——— Safety rules for all screen sizes ——— */
+video,
+img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* ——— Touch device optimizations ——— */
+@media (hover: none) and (pointer: coarse) {
+  /* Remove hover effects on touch devices */
+  .row img:hover {
+    transform: none;
+    box-shadow: none;
+  }
+  
+  a:hover {
+    color: inherit;
+  }
+  
+  /* Larger tap targets for mobile */
+  a {
+    padding: 4px;
+    margin: -4px;
+  }
+}
+
+
+
+
+
+
+/* Fonts
+
+Franklin Gothic ATF Regular
+font-family: "franklin-gothic-atf", sans-serif;
+font-weight: 400;
+font-style: normal;
+
+Franklin Gothic ATF Italic
+font-family: "franklin-gothic-atf", sans-serif;
+font-weight: 400;
+font-style: italic;
+
+Franklin Gothic ATF Black
+font-family: "franklin-gothic-atf", sans-serif;
+font-weight: 700;
+font-style: normal;
+
+Franklin Gothic ATF Black Italic
+font-family: "franklin-gothic-atf", sans-serif;
+font-weight: 700;
+font-style: italic;
+
+Franklin Gothic ATF Thin
+font-family: "franklin-gothic-atf", sans-serif;
+font-weight: 100;
+font-style: normal;
+
+Franklin Gothic Heavy
+font-family: "franklin-gothic-atf", sans-serif;
+font-weight: 800;
+font-style: normal;
+
+Franklin Gothic Thin
+font-family: "franklin-gothic-atf", sans-serif;
+font-weight: 300;
+font-style: normal;
+
+
+*/
 
 /* Roboto Font Import */
 
@@ -425,179 +647,3 @@ p.description {
   font-variation-settings:
     "wdth" 100;
 }
-
-
-
-/* ——— Mobile landscape ——— */
-@media (max-width: 768px) {
-
-  .row img,
-  .row video {
-    max-width: 80%;
-    height: auto;
-    object-fit: contain;
-  }
-
-  video {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-  }
-
-  .page-header-title h1 {
-    font-size: 32x;
-  }
-
-  .page-header-title p,
-  p.description {
-    font-size: 14px;
-  }
-
-  .back {
-    font-size: 12px;
-  }
-
-  h2 {
-    font-size: 20px;
-  }
-
-  .center-text {
-    font-size: 60px;
-  }
-
-  .link-grid {
-    gap: 25px;
-    font-size: 24px;
-    flex-wrap: wrap;
-  }
-
-  .back {
-    font-size: 14px;
-  }
-}
-
-/* ——— Mobile portrait ——— */
-@media (max-width: 480px) {
-  .page {
-    padding: 15px;
-  }
-
-  .row {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .row img,
-  .row video {
-    width: 100%;
-    max-width: 90%;
-    max-height: none;
-    margin-bottom: 15px;
-    object-fit: contain;
-  }
-
-  video {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    display: block;
-  }
-
-  .page-header-title h1 {
-    font-size: 28px;
-  }
-
-  .page-header-title p,
-  p.description {
-    font-size: 13px;
-  }
-
-  .back {
-    font-size: 12px;
-  }
-
-  h2 {
-    font-size: 18px;
-  }
-
-  .center-text {
-    font-size: 40px;
-    margin-bottom: 20px;
-  }
-
-  .link-grid {
-    flex-direction: column;
-    gap: 15px;
-    font-size: 20px;
-  }
-
-  .back {
-    font-size: 14px;
-  }
-}
-
-/* ——— Safety rule for all screen sizes ——— */
-video,
-img {
-  max-width: 100%;
-  height: auto;
-  object-fit: contain;
-  display: block;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Fonts
-
-Franklin Gothic ATF Regular
-font-family: "franklin-gothic-atf", sans-serif;
-font-weight: 400;
-font-style: normal;
-
-Franklin Gothic ATF Italic
-font-family: "franklin-gothic-atf", sans-serif;
-font-weight: 400;
-font-style: italic;
-
-Franklin Gothic ATF Black
-font-family: "franklin-gothic-atf", sans-serif;
-font-weight: 700;
-font-style: normal;
-
-Franklin Gothic ATF Black Italic
-font-family: "franklin-gothic-atf", sans-serif;
-font-weight: 700;
-font-style: italic;
-
-Franklin Gothic ATF Thin
-font-family: "franklin-gothic-atf", sans-serif;
-font-weight: 100;
-font-style: normal;
-
-Franklin Gothic Heavy
-font-family: "franklin-gothic-atf", sans-serif;
-font-weight: 800;
-font-style: normal;
-
-Franklin Gothic Thin
-font-family: "franklin-gothic-atf", sans-serif;
-font-weight: 300;
-font-style: normal;
-
-
-*/

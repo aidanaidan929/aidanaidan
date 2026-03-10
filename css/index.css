@@ -307,3 +307,208 @@
 .flag-path {
   fill: #cc1515;
 }
+
+
+
+
+
+/* ======== RESPONSIVE STYLES ======== */
+
+/* ——— Large Tablets (992px - 1200px) ——— */
+@media (max-width: 1200px) {
+  #name-title {
+    font-size: 100px;
+    min-width: 750px;
+    height: 100px;
+    line-height: 100px;
+    min-height: 100px;
+  }
+  
+  .video-text-wrapper {
+    min-height: 100px;
+  }
+  
+  .link-grid {
+    gap: 50px;
+    font-size: 30px;
+  }
+  
+  #design-rect {
+    max-width: 750px;
+  }
+  
+  #graffiti {
+    max-width: 850px;
+  }
+}
+
+/* ——— Tablets (768px - 992px) ——— */
+@media (max-width: 992px) {
+  #name-title {
+    font-size: 80px;
+    min-width: 600px;
+    height: 80px;
+    line-height: 80px;
+    min-height: 80px;
+  }
+  
+  .video-text-wrapper {
+    min-height: 80px;
+  }
+  
+  .link-grid {
+    gap: 40px;
+    font-size: 26px;
+    margin-top: 32px;
+  }
+  
+  #design-rect {
+    max-width: 650px;
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+  
+  #graffiti {
+    max-width: 700px;
+    width: 85%;
+  }
+  
+  #film-camera {
+    width: 130px;
+    bottom: -40px;
+  }
+  
+  #film-camera.visible {
+    animation: cameraAppearTablet 2.0s ease forwards;
+  }
+  
+  @keyframes cameraAppearTablet {
+    0% {
+      opacity: 0;
+      bottom: -35px;
+    }
+    15% {
+      opacity: 1;
+      bottom: 60px;
+    }
+    65% {
+      opacity: 1;
+      bottom: 60px;
+    }
+    100% {
+      opacity: 0;
+      bottom: -35px;
+    }
+  }
+  
+  #film-flash {
+    width: 160px;
+    bottom: 60px;
+  }
+  
+  #mailbox-flag {
+    width: 22px;
+    top: -20px;
+    right: 28px;
+  }
+}
+
+/* ——— Mobile Landscape (481px - 768px) ——— */
+@media (max-width: 768px) {
+  #name-title {
+    font-size: 60px;
+    min-width: 450px;
+    height: 60px;
+    line-height: 60px;
+    min-height: 60px;
+  }
+  
+  .video-text-wrapper {
+    min-height: 60px;
+  }
+  
+  .link-grid {
+    gap: 30px;
+    font-size: 22px;
+    margin-top: 28px;
+    flex-wrap: wrap;
+  }
+  
+  .link-grid a::after {
+    bottom: -3px;
+    height: 1.5px;
+  }
+  
+  .link-grid a:hover {
+    transform: translateY(-2px);
+  }
+  
+  #design-rect {
+    max-width: 500px;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  
+  #graffiti {
+    max-width: 550px;
+    width: 90%;
+  }
+  
+  #graffiti path {
+    stroke-width: 3;
+  }
+  
+  #film-camera {
+    width: 100px;
+    bottom: -30px;
+    right: 8%;
+  }
+  
+  #film-camera.visible {
+    animation: cameraAppearMobile 2.0s ease forwards;
+  }
+  
+  @keyframes cameraAppearMobile {
+    0% {
+      opacity: 0;
+      bottom: -30px;
+    }
+    15% {
+      opacity: 1;
+      bottom: 45px;
+    }
+    65% {
+      opacity: 1;
+      bottom: 45px;
+    }
+    100% {
+      opacity: 0;
+      bottom: -30px;
+    }
+  }
+  
+  #film-flash {
+    width: 130px;
+    bottom: 45px;
+  }
+  
+  #mailbox-flag {
+    width: 18px;
+    top: -15px;
+    right: 22px;
+  }
+}
+
+/* ——— Mobile Portrait (up to 480px) ——— */
+@media (max-width: 480px) {
+  .container {
+    padding: 20px 0;
+  }
+  
+  #name-title {
+    font-size: 48px;
+    min-width: 350px;
+    height: 48px;
+    line-height: 48px;
+    min-height: 48px;
+  }
+  
+}
