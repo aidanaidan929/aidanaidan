@@ -124,3 +124,182 @@ main {
     cursor: crosshair;
     /* cursor: url(../images/brush.png), auto; */
 }
+
+/* ======== RESPONSIVE STYLES FOR DRAW PAGE ======== */
+
+/* ——— Tablets (768px - 992px) ——— */
+@media (max-width: 992px) {
+  .back {
+    top: 16px;
+    left: 16px;
+    font-size: 11px;
+  }
+  
+  #toolbar {
+    top: 16px;
+    gap: 10px;
+    padding: 8px 16px;
+    font-size: 11px;
+  }
+  
+  #toolbar input[type="color"] {
+    width: 28px;
+    height: 28px;
+  }
+  
+  #toolbar input[type="range"] {
+    width: 70px;
+  }
+  
+  #toolbar button {
+    padding: 5px 12px;
+    font-size: 11px;
+  }
+}
+
+/* ——— Mobile Landscape (481px - 768px) ——— */
+@media (max-width: 768px) {
+  .back {
+    top: 70px;
+    left: 12px;
+    font-size: 12px;
+  }
+  
+  #toolbar {
+    top: 12px;
+    gap: 8px;
+    padding: 8px 12px;
+    font-size: 10px;
+    border-radius: 20px;
+  }
+  
+  #toolbar label {
+    margin-left: 4px;
+  }
+  
+  #toolbar input[type="color"] {
+    width: 26px;
+    height: 26px;
+  }
+  
+  #toolbar input[type="range"] {
+    width: 60px;
+  }
+  
+  #toolbar button {
+    padding: 4px 10px;
+    font-size: 10px;
+  }
+}
+
+/* ——— Mobile Portrait (up to 480px) ——— */
+@media (max-width: 480px) {
+  .back {
+    top: 80px;
+    left: 10px;
+    font-size: 13px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 6px 10px;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  }
+  
+  #toolbar {
+    top: 10px;
+    width: calc(100% - 20px);
+    max-width: 100%;
+    left: 10px;
+    transform: none;
+    gap: 6px;
+    padding: 8px 10px;
+    font-size: 9px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  #toolbar label {
+    margin-left: 2px;
+    font-size: 9px;
+  }
+  
+  #toolbar input[type="color"] {
+    width: 24px;
+    height: 24px;
+  }
+  
+  #toolbar input[type="range"] {
+    width: 50px;
+  }
+  
+  #toolbar button {
+    padding: 4px 8px;
+    font-size: 9px;
+  }
+  
+  #drawing-board {
+    cursor: default; /* Remove crosshair on touch devices */
+  }
+}
+
+/* ——— Small Mobile (up to 360px) ——— */
+@media (max-width: 360px) {
+  .back {
+    top: 90px;
+    left: 8px;
+    font-size: 12px;
+  }
+  
+  #toolbar {
+    top: 8px;
+    width: calc(100% - 16px);
+    left: 8px;
+    padding: 6px 8px;
+    gap: 4px;
+  }
+  
+  #toolbar label {
+    font-size: 8px;
+  }
+  
+  #toolbar input[type="color"] {
+    width: 22px;
+    height: 22px;
+  }
+  
+  #toolbar input[type="range"] {
+    width: 45px;
+  }
+  
+  #toolbar button {
+    padding: 3px 6px;
+    font-size: 8px;
+  }
+}
+
+/* ——— Touch Device Optimizations ——— */
+@media (hover: none) and (pointer: coarse) {
+  .back a:hover {
+    transform: none;
+    color: black;
+  }
+  
+  .back a::after {
+    display: none; /* Remove hover underline on touch */
+  }
+  
+  /* Larger tap target for back button */
+  .back {
+    padding: 8px 12px;
+  }
+  
+  /* Better touch controls */
+  #toolbar input[type="color"],
+  #toolbar button {
+    min-width: 32px;
+    min-height: 32px;
+  }
+  
+  #drawing-board {
+    touch-action: none; /* Prevent scrolling while drawing */
+  }
+}
