@@ -198,10 +198,7 @@ main {
     top: 80px;
     left: 10px;
     font-size: 13px;
-    background-color: rgba(255, 255, 255, 0.9);
     padding: 6px 10px;
-    border-radius: 6px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
   }
   
   #toolbar {
@@ -237,7 +234,7 @@ main {
   }
   
   #drawing-board {
-    cursor: default; /* Remove crosshair on touch devices */
+    cursor: default;
   }
 }
 
@@ -284,15 +281,13 @@ main {
   }
   
   .back a::after {
-    display: none; /* Remove hover underline on touch */
+    display: none;
   }
   
-  /* Larger tap target for back button */
   .back {
     padding: 8px 12px;
   }
   
-  /* Better touch controls */
   #toolbar input[type="color"],
   #toolbar button {
     min-width: 32px;
@@ -300,6 +295,6 @@ main {
   }
   
   #drawing-board {
-    touch-action: none; /* Prevent scrolling while drawing */
+    touch-action: none;
   }
 }
