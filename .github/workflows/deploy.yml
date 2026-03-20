@@ -18,21 +18,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository with LFS
+      - name: Checkout code
         uses: actions/checkout@v4
-        with:
-          lfs: true  # ✅ pulls your videos and other large files
-
-      - name: Install Git LFS
-        run: git lfs install
-
-      - name: Fetch LFS files
-        run: git lfs pull
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .  # uploads your whole website (HTML, CSS, videos, etc.)
+          path: .
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
