@@ -145,28 +145,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
   printLink.addEventListener("mouseenter", () => {
     let index = 0;
-    
+
     clearInterval(typewriterInterval);
-    
+
     nameTitle.innerHTML = '';
-    
+
     for (let i = 0; i < originalText.length; i++) {
       const span = document.createElement('span');
       span.textContent = originalText[i];
-      
+
       if (originalText[i] === ' ') {
         span.innerHTML = '&nbsp;';
       }
-      
+
       span.style.fontFamily = '"franklin-gothic-atf", sans-serif';
       span.style.fontWeight = '800';
       span.style.display = 'inline-block';
       span.style.transition = 'font-family 0.1s ease, font-weight 0.1s ease';
       nameTitle.appendChild(span);
     }
-    
+
     const letters = nameTitle.querySelectorAll('span');
-    
+
     typewriterInterval = setInterval(() => {
       if (index < letters.length) {
 
@@ -175,7 +175,7 @@ document.addEventListener("DOMContentLoaded", () => {
         } else {
           letters[index].textContent = typewriterText[index];
         }
-        
+
         letters[index].style.fontFamily = '"Courier New", Courier, monospace';
         letters[index].style.fontWeight = 'bold';
         index++;
@@ -207,34 +207,40 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-// Disable animations on mobile
-if (window.matchMedia("(max-width: 480px)").matches || 
-    window.matchMedia("(hover: none) and (pointer: coarse)").matches) {
-  
-  // Prevent all animation event listeners from firing
+
+// Disable animations on tablets and mobile (CLAUDE)
+const isTouchDevice = window.matchMedia("(max-width: 1024px)").matches ||
+  window.matchMedia("(hover: none) and (pointer: coarse)").matches ||
+  /iPad|iPhone|iPod|Android/i.test(navigator.userAgent);
+
+if (isTouchDevice) {
   document.addEventListener("DOMContentLoaded", () => {
-    const animatedElements = [
+    // Disable all animation event listeners
+    const animationLinks = [
       'design-link',
-      'film-link', 
+      'film-link',
       'video-link',
       'draw-link',
-      'contact-link'
+      'contact-link',
+      'print-link'
     ];
-    
-    animatedElements.forEach(id => {
+
+    animationLinks.forEach(id => {
       const element = document.getElementById(id);
       if (element) {
-        element.style.pointerEvents = 'auto'; // Keep clickable
-        // Remove all event listeners by cloning
+        // Remove event listeners by cloning
         const clone = element.cloneNode(true);
         element.parentNode.replaceChild(clone, element);
       }
     });
-    
-    // Disable title hover
+
+    // Disable title interactions
     const nameTitle = document.getElementById('name-title');
     if (nameTitle) {
       nameTitle.style.pointerEvents = 'none';
+      nameTitle.style.cursor = 'default';
     }
+
+    console.log('Animations disabled for touch device');
   });
 }

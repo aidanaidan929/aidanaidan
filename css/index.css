@@ -510,16 +510,21 @@
     line-height: 48px;
     min-height: 48px;
   }
+  
+}
 
-    /* DISABLE ALL ANIMATIONS */
+
+
+/* ======== DISABLE ALL ANIMATIONS ON TABLETS AND MOBILE (CLAUDE) ======== */
+
+/* ——— Tablets and below (anything under 1024px) ——— */
+@media (max-width: 1024px) {
+  /* DISABLE ALL ANIMATIONS */
   #design-rect,
   #graffiti,
   #film-camera,
   #film-flash,
-  #mailbox-flag {
-    display: none !important;
-  }
-  
+  #mailbox-flag,
   .video-mask-svg {
     display: none !important;
   }
@@ -533,19 +538,22 @@
     opacity: 1 !important;
   }
   
-  /* Remove all transitions for smoother performance */
-  * {
-    transition: none !important;
-    animation: none !important;
+  /* Simplify link hover */
+  .link-grid a:hover {
+    transform: none !important;
   }
   
-  /* Keep essential transitions only */
-  .link-grid a {
+  .link-grid a::after {
+    transition: width 0.2s ease !important;
+  }
+  
+  /* Simplify title interaction */
+  #name-title {
     transition: color 0.2s ease !important;
   }
 }
 
-/* ——— Touch Device - Disable ALL animations ——— */
+/* ——— ALL Touch Devices (iPads, tablets, phones) ——— */
 @media (hover: none) and (pointer: coarse) {
   /* Hide all SVG animations */
   #design-rect,
@@ -557,23 +565,26 @@
     display: none !important;
   }
   
-  /* Disable hover effects */
+  /* Disable ALL hover effects */
   .link-grid a:hover {
     transform: none !important;
+    color: inherit !important;
   }
   
   .link-grid a::after {
     display: none !important;
   }
   
-  /* Disable title color change */
+  /* Disable title color change on touch */
   #name-title {
-    pointer-events: none;
+    pointer-events: none !important;
   }
   
-  /* Keep links clickable */
+  /* Keep navigation links tappable */
   .link-grid a {
-    pointer-events: auto;
+    pointer-events: auto !important;
+    padding: 12px 16px;
+    margin: -12px -16px;
   }
 }
 
