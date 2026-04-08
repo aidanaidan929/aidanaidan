@@ -510,5 +510,70 @@
     line-height: 48px;
     min-height: 48px;
   }
+
+    /* DISABLE ALL ANIMATIONS */
+  #design-rect,
+  #graffiti,
+  #film-camera,
+  #film-flash,
+  #mailbox-flag {
+    display: none !important;
+  }
   
+  .video-mask-svg {
+    display: none !important;
+  }
+  
+  /* Disable video effect */
+  .video-active .video-mask-svg {
+    opacity: 0 !important;
+  }
+  
+  .video-active #name-title {
+    opacity: 1 !important;
+  }
+  
+  /* Remove all transitions for smoother performance */
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+  
+  /* Keep essential transitions only */
+  .link-grid a {
+    transition: color 0.2s ease !important;
+  }
 }
+
+/* ——— Touch Device - Disable ALL animations ——— */
+@media (hover: none) and (pointer: coarse) {
+  /* Hide all SVG animations */
+  #design-rect,
+  #graffiti,
+  #film-camera,
+  #film-flash,
+  #mailbox-flag,
+  .video-mask-svg {
+    display: none !important;
+  }
+  
+  /* Disable hover effects */
+  .link-grid a:hover {
+    transform: none !important;
+  }
+  
+  .link-grid a::after {
+    display: none !important;
+  }
+  
+  /* Disable title color change */
+  #name-title {
+    pointer-events: none;
+  }
+  
+  /* Keep links clickable */
+  .link-grid a {
+    pointer-events: auto;
+  }
+}
+

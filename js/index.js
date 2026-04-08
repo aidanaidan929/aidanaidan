@@ -206,3 +206,35 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+// Disable animations on mobile
+if (window.matchMedia("(max-width: 480px)").matches || 
+    window.matchMedia("(hover: none) and (pointer: coarse)").matches) {
+  
+  // Prevent all animation event listeners from firing
+  document.addEventListener("DOMContentLoaded", () => {
+    const animatedElements = [
+      'design-link',
+      'film-link', 
+      'video-link',
+      'draw-link',
+      'contact-link'
+    ];
+    
+    animatedElements.forEach(id => {
+      const element = document.getElementById(id);
+      if (element) {
+        element.style.pointerEvents = 'auto'; // Keep clickable
+        // Remove all event listeners by cloning
+        const clone = element.cloneNode(true);
+        element.parentNode.replaceChild(clone, element);
+      }
+    });
+    
+    // Disable title hover
+    const nameTitle = document.getElementById('name-title');
+    if (nameTitle) {
+      nameTitle.style.pointerEvents = 'none';
+    }
+  });
+}
