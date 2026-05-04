@@ -67,7 +67,9 @@
   color: rgb(10, 214, 211);
 }
 
-
+body {
+  overflow: hidden;
+}
 
 /* Animations */
 
